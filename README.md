@@ -1,5 +1,4 @@
-# practical-javascript
-a quick practice project for creating a todo app
+# A quick practice project for creating a todo app
 
 ## Version 1 Requirements
 - It should have a place to store todos
