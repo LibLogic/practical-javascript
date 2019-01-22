@@ -12,3 +12,10 @@
 - It should have a function to add new todos
 - It should have a function to change todos
 - It should have a function to delete todos
+- 
+## Version 3 Requirements
+- It should store the todo array on an object
+- It should have a displayTodos method
+- It should have a addTodo method
+- It should have a changeTodo method
+- It should have a deleteTodo method
