@@ -7,3 +7,11 @@ function displayTodos(){
 }
 
 displayTodos();
+
+// function for adding todos
+function addTodo(todo){
+	todos.push(todo);
+	displayTodos();
+}
+
+addTodo('hello there');
