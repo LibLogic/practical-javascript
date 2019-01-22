@@ -15,3 +15,11 @@ function addTodo(todo){
 }
 
 addTodo('hello there');
+
+// function to change todos
+function changeTodo(position, newValue){
+	todos[position] = newValue;
+	displayTodos();
+}
+
+changeTodo(0, 'changed');
