@@ -23,3 +23,11 @@ function changeTodo(position, newValue){
 }
 
 changeTodo(0, 'changed');
+
+// function to delete todos
+function deleteTodo(position){
+	todos.splice(position, 1);
+	displayTodos();
+}
+
+deleteTodo(todos.length - 1)
