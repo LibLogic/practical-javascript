@@ -4,6 +4,11 @@ var todoList = {
 	displayTodos: function(){
 		console.log(this.todos);
 	},
+// method to add a todo	
+	addTodo: function(todo){
+		this.todos.push(todo);
+		this.displayTodos();
+	},
 // method to change a todo		
 	changeTodo: function(position, newValue){
 		this.todos[position] = newValue;
