@@ -33,13 +33,11 @@ var todoList = {
 		this.todos.splice(position, 1);
 		this.displayTodos();		
 	},
-// method to mark todos completed	
 	toggleCompleted: function(position){
 	  var todo = this.todos[position];
 	  todo.completed = !todo.completed;
 	  this.displayTodos();
 	},
-// method to mark all todos as completed or uncompleted	
 	toggleAll: function(){
 	  var totalTodos = this.todos.length;
 	  var completedTodos = 0;
@@ -54,7 +52,7 @@ var todoList = {
       for(var i = 0; i < totalTodos; i++){
         this.todos[i].completed = false;
       }
-    } else { // make everything true
+    } else {
       for(var i = 0; i < totalTodos; i++){
         this.todos[i].completed = true;
       }
@@ -62,3 +60,14 @@ var todoList = {
     this.displayTodos();
 	}
 };
+
+var displayTodosButton = document.getElementById('displayTodosButton');
+var toggleAllButton = document.getElementById('toggleAllButton');
+
+displayTodosButton.addEventListener('click', function(){
+  todoList.displayTodos();
+});
+
+toggleAllButton.addEventListener('click', function(){
+  todoList.toggleAll();
+})
