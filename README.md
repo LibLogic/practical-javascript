@@ -25,3 +25,8 @@
 - todoList.changeTodo should change the todoText property
 - todoList.toggleCompleted should change the completed property
 
+## Version 5 Requirements 
+- .displayTodos should show .todoText
+- .displayTodos should tell you if .todos is empty
+- .displayTodos should show .completed
+
