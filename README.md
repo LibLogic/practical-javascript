@@ -30,3 +30,6 @@
 - .displayTodos should tell you if .todos is empty
 - .displayTodos should show .completed
 
+## Version 6 Requirements
+- .toggleAll: If everything's true, make everything false
+- .toggleAll: Otherwise, make everything true
