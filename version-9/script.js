@@ -97,6 +97,16 @@ var view = {
     todosUl.innerHTML = '';
 		for (var i = 0; i < todoList.todos.length; i++){
       var todosLi = document.createElement('li');
+      var todoTextWithCompletion = '';
+      var todo = todoList.todos[i];
+      
+      if(todo.completed === true){
+        todoTextWithCompletion = '(x) ' + todo.todoText;
+      }else {
+        todoTextWithCompletion = '( ) ' + todo.todoText;        
+      }
+      
+  		todosLi.textContent = todoTextWithCompletion;      
       todosUl.appendChild(todosLi);
 		}
 	}
