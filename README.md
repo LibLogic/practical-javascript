@@ -44,3 +44,8 @@
 - It should have working controls for .changeTodo
 - It should have working controls for .deleteTodo
 - It should have working controls for .toggleCompleted
+
+## Version 9 Requirements
+- There sould be an li element for every todo
+- Each li element should contain .todoText
+- Each li element should show .completed
