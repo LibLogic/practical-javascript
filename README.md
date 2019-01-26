@@ -43,4 +43,8 @@
 - It should have working controls for .addTodo
 - It should have working controls for .changeTodo
 - It should have working controls for .deleteTodo
+<<<<<<< HEAD
 - It should have working controls for .toggleCompleted
+=======
+- It should have working controls for .toggleCompleted
+>>>>>>> version-8_Forms/Inputs

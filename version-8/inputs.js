@@ -42,18 +42,30 @@ var todoList = {
 	  var totalTodos = this.todos.length;
 	  var completedTodos = 0;
 	  //Get number of completed todos
+<<<<<<< HEAD
 	  for(var i = 0; i < totalTodos; i++){
+=======
+	  for(let i = 0; i < totalTodos; i++){
+>>>>>>> version-8_Forms/Inputs
 	    if(this.todos[i].completed === true) {
 	      completedTodos++;
       }
 	  }
     //If everything's true make everything false
     if(completedTodos === totalTodos){
+<<<<<<< HEAD
       for(var i = 0; i < totalTodos; i++){
         this.todos[i].completed = false;
       }
     } else {
       for(var i = 0; i < totalTodos; i++){
+=======
+      for(let i = 0; i < totalTodos; i++){
+        this.todos[i].completed = false;
+      }
+    } else {
+      for(let i = 0; i < totalTodos; i++){
+>>>>>>> version-8_Forms/Inputs
         this.todos[i].completed = true;
       }
     }
@@ -65,7 +77,35 @@ var handlers = {
 	displayTodos: function(){
 		todoList.displayTodos();
 	},
+<<<<<<< HEAD
 	toggleAll: function(){
 		todoList.toggleAll();
 	}
 }
+=======
+	addTodo: function(){
+		var addTodoTextInput = document.getElementById("addTodoTextInput");
+		todoList.addTodo(addTodoTextInput.value);
+		addTodoTextInput.value = '';
+	},
+	changeTodo: function(){
+		var changeTodoPositionInput = document.getElementById("changeTodoPositionInput");
+		var changeTodoTextInput = document.getElementById("changeTodoTextInput");
+		todoList.changeTodo(changeTodoPositionInput.valueAsNumber, changeTodoTextInput.value);
+		changeTodoPositionInput.value = '';	 
+		changeTodoTextInput.value = '';
+	},
+	deleteTodo: function(){
+		var deleteTodoPositionInput = document.getElementById("deleteTodoPositionInput");
+		todoList.deleteTodo(deleteTodoPositionInput.valueAsNumber);
+	},
+	toggleCompleted: function(){
+		var toggleCompletedPositionInput = document.getElementById("toggleCompletedPositionInput");
+		todoList.toggleCompleted(toggleCompletedPositionInput.valueAsNumber);
+		toggleCompletedPositionInput.value = '';
+	},
+	toggleAll: function(){
+		todoList.toggleAll();
+	}
+};
+>>>>>>> version-8_Forms/Inputs
