@@ -17,27 +17,15 @@ var todoList = {
     todo.completed = !todo.completed;
   },
   toggleAll: function() {
-    var totalTodos = this.todos.length;
     var completedTodos = 0;
-    
-    // Get number of completed todos.
-    for (var i = 0; i < totalTodos; i++) {
-      if (this.todos[i].completed === true) {
-        completedTodos++;
-      }
-    }
-    
-    // Case 1: If everything’s true, make everything false.
-    if (completedTodos === totalTodos) {
-      for (var i = 0; i < totalTodos; i++) {
-        this.todos[i].completed = false;
-      }
-    // Case 2: Otherwise, make everything true.
-    } else {
-      for (var i = 0; i < totalTodos; i++) {
-        this.todos[i].completed = true;
-      }      
-    }
+    // count completed todos
+    this.todos.forEach(function(todo){
+      todo.completed === true ? completedTodos++ : null;
+    });
+    // if all todos are true, make everything false, otherwise make everything true
+    this.todos.forEach(function(todo){
+      completedTodos === todoList.todos.length ? todo.completed = false : todo.completed = true;
+     });
   }
 };
 
@@ -76,22 +64,33 @@ var view = {
   displayTodos: function() {
     var todosUl = document.querySelector('ul');
     todosUl.innerHTML = '';
-    for (var i = 0; i < todoList.todos.length; i++) {
+    todoList.todos.forEach(function(todo, i){
       var todoLi = document.createElement('li');
-      var todo = todoList.todos[i];
-      var todoTextWithCompletion = '';
-
-      if (todo.completed === true) {
-        todoTextWithCompletion = '(x) ' + todo.todoText;
-      } else {
-        todoTextWithCompletion = '( ) ' + todo.todoText;
-      }
-      
+      var todoText = '';
+      todo.completed === true ? 
+      todoText = '(x) ' + todo.todoText : todoText = '( ) ' + todo.todoText;
       todoLi.id = i;
-      todoLi.textContent = todoTextWithCompletion;
-      todoLi.appendChild(this.createDeleteButton())
+      todoLi.textContent = todoText;
+      todoLi.appendChild(view.createDeleteButton());
       todosUl.appendChild(todoLi);
-    }  
+    });
+    // for (var i = 0; i < todoList.todos.length; i++) {
+    //   var todoLi = document.createElement('li');
+    //   var todo = todoList.todos[i];
+    //   var todoText = '';
+    //   todo.completed === true ? 
+    //   todoText = '(x) ' + todo.todoText : todoText = '( ) ' + todo.todoText     
+      // if (todo.completed === true) {
+      //   todoTextWithCompletion = '(x) ' + todo.todoText;
+      // } else {
+      //   todoTextWithCompletion = '( ) ' + todo.todoText;
+      // }
+      
+    //   todoLi.id = i;
+    //   todoLi.textContent = todoText;
+    //   todoLi.appendChild(this.createDeleteButton())
+    //   todosUl.appendChild(todoLi);
+    // }  
   },
   createDeleteButton: function(){
     var deleteButton = document.createElement('button');
