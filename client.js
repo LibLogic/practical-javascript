@@ -71,9 +71,9 @@ var view = {
       todoText = '(x) ' + todo.todoText : todoText = '( ) ' + todo.todoText;
       todoLi.id = i;
       todoLi.textContent = todoText;
-      todoLi.appendChild(this.createDeleteButton());
+      todoLi.appendChild(view.createDeleteButton());
       todosUl.appendChild(todoLi);
-    }, this);
+    });
   },
   createDeleteButton: function(){
     var deleteButton = document.createElement('button');
